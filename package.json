@@ -10,7 +10,7 @@
     "serve": "gatsby serve"
   },
   "dependencies": {
-    "gatsby": "2.0.0-beta.42",
+    "gatsby": "2.0.0-beta.47",
     "gatsby-link": "2.0.0-beta.4",
     "gatsby-plugin-netlify": "2.0.0-beta.3",
     "gatsby-plugin-netlify-cms": "2.0.0-beta.6",
