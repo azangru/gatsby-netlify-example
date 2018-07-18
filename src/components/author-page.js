@@ -10,10 +10,20 @@ export default class AuthorPage extends Component {
         <h1>
           {name}
         </h1>
-        <div dangerouslySetInnerHTML={{ __html: this.props.content }}/>
+        { this.renderContent() }
         { this.renderBooks() }
       </Fragment>
     );
+  }
+
+  renderContent() {
+    const { content } = this.props;
+
+    if (typeof content === 'string') {
+      return <div dangerouslySetInnerHTML={{ __html: this.props.content }}/>;
+    } else {
+      return content;
+    }
   }
 
   renderBooks() {
@@ -25,7 +35,7 @@ export default class AuthorPage extends Component {
         {book.title}
       </div>
     ));
-    
+
     return (
       <Fragment>
         <h2>
