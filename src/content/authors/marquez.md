@@ -2,8 +2,8 @@
 name: Габриэль Гарсиа Маркес
 slug: marquez
 image:
-  text: Apples
-  url: /images/uploads/apples.jpg
+  caption: This is an image of Marquez
+  url: /uploads/plinio_apuleyo_mendoza.jpg
 books:
   - book:
       title: 'One Hundred Years of Solitude'
