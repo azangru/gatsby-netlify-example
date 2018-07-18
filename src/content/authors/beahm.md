@@ -1,14 +1,11 @@
 ---
+title: beahm
 name: Джордж Бим
-slug: beahm
 image:
-  text: Apples
-  url: /images/uploads/apples.jpg
+  url: /uploads/джордж-бим.jpg
 books:
   - book:
-      title: 'Живи как Джобс'
-  - book:
-      title: 'Love in the Time of Cholera'
+      title: Живи как Джобс
 ---
 
 
