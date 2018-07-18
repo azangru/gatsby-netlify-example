@@ -2,7 +2,7 @@
 title: beahm
 name: Джордж Бим
 image:
-  url: /uploads/джордж-бим.jpg
+  url: /uploads/george_beahm.jpg
 books:
   - book:
       title: Живи как Джобс

@@ -1,6 +1,6 @@
 ---
+title: marquez
 name: Габриэль Гарсиа Маркес
-slug: marquez
 image:
   caption: This is an image of Marquez
   url: /uploads/plinio_apuleyo_mendoza.jpg

@@ -26,7 +26,12 @@ export default class AuthorPage extends Component {
     const { image } = this.props;
 
     if (image.url) {
-      return <img src={image.url} />;
+      return (
+        <figure>
+          <img src={image.url} />
+          <figcaption>{image.caption}</figcaption>
+        </figure>
+      );
     }
   }
 
