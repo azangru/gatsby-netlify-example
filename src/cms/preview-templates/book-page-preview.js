@@ -6,4 +6,4 @@ const BookPagePreview = ({ entry, widgetFor }) => {
   return null;
 };
 
-export default AuthorPagePreview;
+export default BookPagePreview;

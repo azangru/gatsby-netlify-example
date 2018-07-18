@@ -1,13 +1,23 @@
 import React from 'react';
 
-const AuthorPagePreview = ({ entry, widgetFor }) => {
-  console.log('entry', entry, 'widgetFor', widgetFor);
-  console.log('name?', entry.getIn(['data', 'name']));
-  return null;
+import AuthorPage from '../../components/author-page';
+
+const AuthorPagePreview = ({ entry }) => {
+  const name = entry.getIn(['data', 'name']);
+  let books = entry.getIn(['data', 'books']);
+  const body = entry.getIn(['data', 'body']);
+
+  books = books ? books
+    .filter(book => Boolean(book.get('book')))
+    .toJS()
+    .map(({ book }) => book)
+    : [];
+
   return (
-    <AboutPageTemplate
-      title={entry.getIn(['data', 'title'])}
-      content={widgetFor('body')}
+    <AuthorPage
+      name={name}
+      books={books}
+      content={body}
     />
   );
 };

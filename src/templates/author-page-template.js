@@ -1,7 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import { Link, graphql } from "gatsby";
 
-export default class AboutPageTemplate extends Component {
+import AuthorPage from '../components/author-page';
+
+export default class AuthorPageTemplate extends Component {
 
   getName() {
     return this.props.data.markdownRemark.frontmatter.name;
@@ -19,28 +21,12 @@ export default class AboutPageTemplate extends Component {
   render() {
     return (
       <Fragment>
-        <h1>
-          {this.getName()}
-        </h1>
-        <div dangerouslySetInnerHTML={{ __html: this.getBody() }}/>
-        { this.renderBooks() }
+        <AuthorPage
+          name={this.getName()}
+          books={this.getBooks()}
+          content={this.getBody()}
+        />
         <Link to="/">На главную</Link>
-      </Fragment>
-    );
-  }
-
-  renderBooks() {
-    const books = this.getBooks().map((book, index) => (
-      <div key={index}>
-        {book.title}
-      </div>
-    ));
-    return (
-      <Fragment>
-        <h2>
-          Книги
-        </h2>
-        { books }
       </Fragment>
     );
   }
