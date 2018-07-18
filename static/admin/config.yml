@@ -6,6 +6,8 @@ backend:
 media_folder: static/uploads # Media files will be stored here
 public_folder: /uploads # Part of the path where to access the media in the built project
 
+# NOTE: collections with create: true MUST have a title field (containing file name)
+
 collections:
   - name: authors # Used in routes, e.g. /admin/collections/authors
     label: Authors # label in the admin UI
@@ -13,16 +15,28 @@ collections:
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template i.e. title.md
     fields: # The fields for each document, usually in front matter
+      - {label: "File name", name: "title", widget: "string"}
       - {label: "Name", name: "name", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
-      # - label: ""
-      - label: "Books"
-        name: "books"
-        widget: "list"
+      - label: Image
+        name: image
+        required: false
+        widget: object
         fields:
-           - label: "Book"
-             name: "book"
-             widget: "object"
+          - label: Image
+            name: url
+            widget: image
+          - label: Caption
+            name: caption
+            widget: text
+      - label: Books
+        name: books
+        widget: list
+        required: false
+        fields:
+           - label: Book
+             name: book
+             widget: object
              fields:
               - {label: "Title", name: "title", widget: "text"}
 
@@ -32,4 +46,4 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "File name", name: "title", widget: "string"}

@@ -6,9 +6,9 @@ image:
   url: /uploads/plinio_apuleyo_mendoza.jpg
 books:
   - book:
-      title: 'One Hundred Years of Solitude'
+      title: One Hundred Years of Solitude
   - book:
-      title: 'Love in the Time of Cholera'
+      title: Love in the Time of Cholera
 ---
 
 

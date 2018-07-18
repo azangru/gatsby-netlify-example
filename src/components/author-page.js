@@ -2,6 +2,11 @@ import React, { Component, Fragment } from 'react';
 
 export default class AuthorPage extends Component {
 
+  static defaultProps = {
+    books: [],
+    image: {}
+  }
+
   render() {
     const { name } = this.props;
 
@@ -10,10 +15,19 @@ export default class AuthorPage extends Component {
         <h1>
           {name}
         </h1>
+        { this.renderImage() }
         { this.renderContent() }
         { this.renderBooks() }
       </Fragment>
     );
+  }
+
+  renderImage() {
+    const { image } = this.props;
+
+    if (image.url) {
+      return <img src={image.url} />;
+    }
   }
 
   renderContent() {
