@@ -14,7 +14,9 @@ export default class AuthorPageTemplate extends Component {
   }
 
   getBooks() {
-    return this.props.data.books.edges
+    const books = this.props.data.books;
+    const edges = books ? books.edges : [];
+    return edges
       .map(edge => edge.node)
       .map(node => node.frontmatter);
   }
