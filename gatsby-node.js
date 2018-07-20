@@ -1,4 +1,3 @@
-// const _ = require('lodash');
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 
@@ -21,11 +20,10 @@ exports.createPages = ({ actions, graphql }) => {
       allMarkdownRemark(limit: 1000) {
         edges {
           node {
-            id
-            fields {
-              slug
-            }
             frontmatter {
+              title
+            }
+            fields {
               slug
             }
           }
@@ -42,7 +40,8 @@ exports.createPages = ({ actions, graphql }) => {
 
     posts.forEach(edge => {
       const slug = edge.node.fields.slug;
-      const id = edge.node.id;
+      const id = edge.node.frontmatter.title || '';
+
       createPage({
         path: edge.node.fields.slug,
         component: getPageTemplate(slug),

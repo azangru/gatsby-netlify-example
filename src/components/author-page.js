@@ -51,7 +51,7 @@ export default class AuthorPage extends Component {
 
     books = books.map((book, index) => (
       <div key={index}>
-        {book.title}
+        {book.book_title}
       </div>
     ));
 

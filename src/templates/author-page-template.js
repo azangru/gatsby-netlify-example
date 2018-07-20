@@ -6,20 +6,21 @@ import AuthorPage from '../components/author-page';
 export default class AuthorPageTemplate extends Component {
 
   getName() {
-    return this.props.data.markdownRemark.frontmatter.name;
+    return this.props.data.author.frontmatter.name;
   }
 
   getImage() {
-    return this.props.data.markdownRemark.frontmatter.image;
+    return this.props.data.author.frontmatter.image;
   }
 
   getBooks() {
-    return this.props.data.markdownRemark.frontmatter.books
-      .map(book => book.book);
+    return this.props.data.books.edges
+      .map(edge => edge.node)
+      .map(node => node.frontmatter);
   }
 
   getBody() {
-    return this.props.data.markdownRemark.html;
+    return this.props.data.author.html;
   }
 
   render() {
@@ -40,8 +41,8 @@ export default class AuthorPageTemplate extends Component {
 
 
 export const pageQuery = graphql`
-  query AuthorQuery($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug }}) {
+  query AuthorQuery($id: String!, $slug: String!) {
+    author: markdownRemark(fields: { slug: { eq: $slug }}) {
       id
       html
       frontmatter {
@@ -53,6 +54,15 @@ export const pageQuery = graphql`
         books {
           book {
             title
+          }
+        }
+      }
+    }
+    books: allMarkdownRemark(filter: { frontmatter: { authors: { elemMatch: { author_id: { eq: $id } } } } }) {
+      edges {
+        node {
+          frontmatter {
+            book_title
           }
         }
       }

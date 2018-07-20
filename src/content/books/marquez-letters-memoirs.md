@@ -1,7 +1,9 @@
 ---
-title: Габриэль Гарсия Маркес. Письма и воспоминания
-slug: marquez-letters-memoirs
-author: Плинио Апулейо Мендоса
+title: marquez-letters-memoirs
+book_title: Габриэль Гарсия Маркес. Письма и воспоминания
+authors:
+  - author_id: mendoza
+pages: 234
 year: 2018
 isbn: 978-3-16-148410-0
 ---

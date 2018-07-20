@@ -1,8 +1,8 @@
 ---
-title: marquez
-name: Габриэль Гарсиа Маркес
+title: mendoza
+name: Плинио Апулейо Мендоса
 image:
-  caption: This is an image of Marquez
+  caption: This is an image of Plinio Apyleyo Mendoza
   url: /uploads/plinio_apuleyo_mendoza.jpg
 books:
   - book:
